@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpa-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hpa-deployment
+  template:
+    metadata:
+      labels:
+        app: hpa-deployment
+    spec:
+      containers:
+      - name: node-app-cont
+        image: manisankardivi/node-app
+        ports:
+        - name: http
+          containerPort: 3000
+        resources:
+          requests:
+            memory: "64Mi" # Request 64 MiB of memory
+            cpu: "100m" # Request 250 millicpu (0.25 CPU)
+          limits:
+            memory: "128Mi" # Limit memory usage to 128 MiB
+            cpu: "500m" # Limit CPU usage to 500 millicpu (0.5 CPU)
+
+...
+
