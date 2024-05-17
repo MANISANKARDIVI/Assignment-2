@@ -13,7 +13,7 @@ Step 1: Download the assignment files from this link https://drive.google.com/fi
 ##
 
 
-Step 2: Install K8S in Ubuntu 20.04, Take 2 instance 1-control-plane, 1-node.
+Step 2: Install K8S in Ubuntu 22.04, Take 2 instance 1-control plane, 1-worker node.
 
 ## Install commands in both control-plane & Node
 ```bash
