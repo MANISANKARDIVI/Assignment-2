@@ -124,6 +124,9 @@ add this line: in 44 line below
 
 - --kubelet-insecure-tls=true
 
+          or
+kubectl patch deployment metrics-server -n kube-system --type 'json' -p '[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls"}]'
+
 now check the metric-server is installed or not.
 
 kubectl get po -n kube-system
